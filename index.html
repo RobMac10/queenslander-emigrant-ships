@@ -34,10 +34,6 @@ textarea{width:100%;box-sizing:border-box;min-height:5rem;font:1rem Georgia,seri
 <div id="insw"><div class="k" style="text-align:left;margin-top:.4rem">Inset · the Queensland end of this route</div><svg id="ins" viewBox="0 0 1000 537"><use href="#landA"/><use href="#landB"/><g id="lay2"></g></svg></div>
 <div><button class="alt" id="rp">↻ Replay route</button></div>
 <ol id="leg" class="leg"></ol>
-<div class="card mm" id="mary"><b>Mary Millar</b> <span class="sm">· one thread through the Irish group</span><ul id="mml"></ul>
-<p class="sm"><span class="chk">[CHECK: record match unconfirmed]</span> This is the database entry for a Mary <i>Miller</i>. Whether she is the Mary Millar of this book's family line has not been confirmed against the shipping list, Immigration Correspondence 50/700 and the birth, death and marriage indexes.</p>
-<div class="src">Source: <a href="https://irishfaminememorial.org/details-page/?pdb=8456">Irish Famine Memorial orphan database, pdb=8456</a></div>
-<button class="alt" id="mmgo">Show Mary's route (Irish)</button></div>
 <div class="card"><div id="gh"></div><div class="tabs" id="tabs"></div><ul id="body"></ul><div id="fig"></div></div>
 
 <h2>Your turn</h2>
@@ -163,8 +159,6 @@ const chk=s=>s.replace(/\[CHECK[^\]]*\]/g,m=>`<span class="chk">${m}</span>`);
 const sl=k=>k.split(',').map(x=>`<a href="${S[x][1]}" target="_blank" rel="noopener">${S[x][0]}</a>`).join(' · ');
 // Mary
 const MM=[["Native place: Clonaslee, Queen's County (now Laois). Born Mountmellick, 6 July 1831, according to the record."],["Tippoo Saib to Sydney, July 1850. Age on arrival 19. Recorded as a house servant who could not read or write."],["Immigration Correspondence 50/700, 2 September 1850: to Moreton Bay per Eagle, with a group of 15 orphans. <span class='chk'>[CHECK: whether this is the sailing date]</span>"],["Married Richard Browning in Queensland, 1851. Lived at Belle Vue Station, Brisbane, and Eskdale; 11 children."],["Died in Ellenborough St, Ipswich, 1906."]];
-document.getElementById('mml').innerHTML=MM.map((m,i)=>`<li><span class="n">${i+1}</span>${m[0]}</li>`).join('');
-document.getElementById('mmgo').onclick=()=>{g='irish';tab='where';draw(g);show();svg.scrollIntoView({behavior:'smooth'})};
 // groups
 const T=[["where","WHERE"],["what","WHAT"],["why","WHY"],["how","HOW"],["then","THEN WHAT"]];let g='irish',tab='where';
 function show(){const d=G[g];document.querySelectorAll('#grp button').forEach(b=>b.classList.toggle('on',b.dataset.g==g));
